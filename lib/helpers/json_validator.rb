@@ -13,19 +13,19 @@ class JSONValidator
   def check_json_validation
     if valid_json?
       print_progress_marker
-      return true
+      true
     else
       print_error_message
-      return false
+      false
     end
   end
 
   def valid_json?
     begin
       JSON.parse(@contents)
-      return true
+      true
     rescue Exception => e
-      return false
+      false
     end
   end
 

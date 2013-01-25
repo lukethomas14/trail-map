@@ -27,16 +27,16 @@ class URIValidator
 
   def head_request_ok?(uri)
     response = HTTParty.head(uri)
-    return response.ok?
+    response.ok?
   rescue SocketError
-    return false
+    false
   end
 
   def get_request_ok?(uri)
     response = HTTParty.get(uri)
-    return response.ok?
+    response.ok?
   rescue SocketError
-    return false
+    false
   end
 
   def print_progress_marker
